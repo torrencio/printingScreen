@@ -8,13 +8,14 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let x: Int32 = 3;//create a variable to hold the number of times to print
-        let point1 = ("Hello World\n" as NSString).UTF8String
+        let point1 = ("Tory\n" as NSString).UTF8String
         var pointerx: UnsafeMutablePointer<Int8> = UnsafeMutablePointer(point1)
         
         //create something we can convert to cstring
@@ -28,8 +29,18 @@ class ViewController: UIViewController {
         let tory = ("tory\n" as NSString).UTF8String
         var rules: UnsafeMutablePointer<Int8> = UnsafeMutablePointer(tory)
         appendVector(x, rules)
+        let getThatString=getString()
+        
+        let holdOddCString=String.fromCString(getThatString)
+        let FinalString:NSString = NSString(string:holdOddCString!)
+        
+        
+        
+        
         
         printing()//call my printing function
+        println(FinalString)//this will print the phrase YESSS, retrieved from the function
+
         
     }
     

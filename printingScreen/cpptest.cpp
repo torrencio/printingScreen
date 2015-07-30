@@ -22,10 +22,11 @@ public:
     int numberOfTimes;
     
     char helloMessage[100];
+    char returned[100]="YESSSS";
     
     helloStuff(){
         numberOfTimes=1;
-        strcpy(helloMessage, "Hello World");
+        strcpy(helloMessage, "Testing");
         
     
     
@@ -40,14 +41,24 @@ public:
 };
 
 std::vector<helloStuff> myvector;
+char returned[100]="YESSSS";
 extern "C" {
 void appendVector(int x, char y[]){
     //string &a = *reinterpret_cast<string*>(y);
     //cout<<a<<endl;
     
     myvector.push_back(helloStuff(x,y));
+    
 
 }
+}
+extern "C" {
+    char *getString(){
+        //string &a = *reinterpret_cast<string*>(y);
+        //cout<<a<<endl;
+        
+        return returned;
+    }
 }
 
 void printing(){

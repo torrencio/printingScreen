@@ -12,6 +12,7 @@ extern "C" {
     
     void appendVector(int, char*);
     void printing();
+    char *getString();
     
 #ifdef __cplusplus
 }
